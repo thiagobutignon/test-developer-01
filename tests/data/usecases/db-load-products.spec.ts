@@ -1,5 +1,4 @@
-import { ListProduct, ListProducts } from '@/domain/usecases'
-
+import { DbLoadProducts } from '@/data/usecases'
 import { LoadProductsRepository } from '@/data/protocols'
 import { productListMock } from '@/tests/domain/mocks/products-mocks'
 
@@ -10,17 +9,11 @@ export class LoadProductsRepositorySpy implements LoadProductsRepository {
   }
 }
 
-export class DbLoadProducts implements ListProduct {
-  constructor (private readonly loadProductsRepository: LoadProductsRepository) {}
-  async performs (): Promise<ListProducts.Result> {
-    return this.loadProductsRepository.loadAll()
-  }
-}
-
 type SutTypes = {
   sut: DbLoadProducts
   loadProductsRepositorySpy: LoadProductsRepositorySpy
 }
+
 const makeSut = (): SutTypes => {
   const loadProductsRepositorySpy = new LoadProductsRepositorySpy()
   const sut = new DbLoadProducts(loadProductsRepositorySpy)

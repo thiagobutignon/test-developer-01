@@ -1,9 +1,9 @@
 import { Product } from '@/domain/models'
 
 export interface ListProduct {
-  performs: () => Promise<ListProducts.Result>
+  performs: () => Promise<ListProduct.Result>
 }
 
-export namespace ListProducts {
+export namespace ListProduct {
   export type Result = Product[]
 }
