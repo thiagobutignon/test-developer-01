@@ -1,15 +1,7 @@
 import { ListProduct, ListProducts } from '@/domain/usecases'
 
-import { Product } from '@/domain/models'
+import { LoadProductsRepository } from '@/data/protocols'
 import { productListMock } from '@/tests/domain/mocks/products-mocks'
-
-export interface LoadProductsRepository {
-  loadAll: () => Promise<LoadProductsRepository.Result>
-}
-
-export namespace LoadProductsRepository {
-  export type Result = Product[]
-}
 
 export class LoadProductsRepositorySpy implements LoadProductsRepository {
   result = productListMock()
