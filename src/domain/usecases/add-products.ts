@@ -1,11 +1,11 @@
-import { Products } from '@/domain/models'
+import { Product } from '@/domain/models'
 
 export interface AddProducts {
   perform: (params: AddProducts.Params) => Promise<AddProducts.Result>
 }
 
 export namespace AddProducts {
-  export type Params = Products[]
+  export type Params = Product[]
 
-  export type Result = Products[]
+  export type Result = Product[]
 }

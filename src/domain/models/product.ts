@@ -12,7 +12,7 @@
 }
  */
 
-export type Products = {
+export type Product = {
   key: string
   priceDate: Date
   productCode: number
