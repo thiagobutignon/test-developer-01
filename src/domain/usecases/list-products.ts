@@ -1,7 +1,7 @@
 import { Product } from '@/domain/models'
 
 export interface ListProduct {
-  perform: () => Promise<ListProducts.Result>
+  performs: () => Promise<ListProducts.Result>
 }
 
 export namespace ListProducts {
