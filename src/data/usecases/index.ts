@@ -1,1 +1,1 @@
-export * from './db-load-products'
+export * from './db'
